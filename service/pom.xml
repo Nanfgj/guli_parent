@@ -23,12 +23,6 @@
     </properties>
 
     <dependencies>
-        <!--统一结果返回依赖-->
-        <dependency>
-            <groupId>com.nfgj</groupId>
-            <artifactId>common_utils</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
 
         <!--service_base中的Swagger-->
         <dependency>
@@ -36,6 +30,7 @@
             <artifactId>service_base</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.cloud</groupId>-->
 <!--            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>-->

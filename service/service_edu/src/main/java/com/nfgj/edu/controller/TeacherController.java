@@ -7,7 +7,7 @@ import com.nfgj.commonutils.R;
 import com.nfgj.edu.pojo.Teacher;
 import com.nfgj.edu.pojo.vo.TeacherQuery;
 import com.nfgj.edu.service.TeacherService;
-import com.sun.xml.internal.fastinfoset.util.ValueArray;
+import com.nfgj.servicebase.exceptionhandler.GuliException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -38,6 +38,13 @@ public class TeacherController {
     @GetMapping("findAll")
     public R findAllTeacher(){
         List<Teacher> teacherList = teacherService.list(null);
+
+        try {
+            int i = 10 / 0;
+        } catch (Exception e) {
+            throw new GuliException(111225,"出现自定义异常");
+        }
+
         return R.ok().data("teacherList",teacherList);
     }
 
