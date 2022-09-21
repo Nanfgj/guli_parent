@@ -26,9 +26,10 @@ import java.util.List;
  * @since 2022-09-19
  */
 @Api(description = "讲师管理")
+@CrossOrigin
 @RestController
-@RequestMapping("/edu/teacher")
-public class TeacherController {
+@RequestMapping("/eduservice/teacher")
+public class EduTeacherController {
 
     @Autowired
     private TeacherService teacherService;
@@ -116,6 +117,9 @@ public class TeacherController {
         if (!StringUtils.isEmpty(end)){
             wrapper.le("gmt_create",end);
         }
+
+        //根据创建时间降序排序
+        wrapper.orderByDesc("gmt_create",begin);
 
         //调用方法实现条件查询分页
         teacherService.page(pageParam,wrapper);
