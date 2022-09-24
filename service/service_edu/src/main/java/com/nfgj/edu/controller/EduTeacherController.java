@@ -40,13 +40,13 @@ public class EduTeacherController {
     public R findAllTeacher(){
         List<Teacher> teacherList = teacherService.list(null);
 
-        try {
-            int i = 10 / 0;
-        } catch (Exception e) {
-            throw new GuliException(111225,"出现自定义异常");
-        }
+//        try {
+//            int i = 10 / 0;
+//        } catch (Exception e) {
+//            throw new GuliException(111225,"出现自定义异常");
+//        }
 
-        return R.ok().data("teacherList",teacherList);
+        return R.ok().data("items",teacherList);
     }
 
     //2.根据id，删除讲师

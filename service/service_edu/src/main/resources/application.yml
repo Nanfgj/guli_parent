@@ -16,6 +16,9 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
+#配置mapper xml文件的路径
+mybatis-plus:
+  mapper-locations: classpath:com/nfgj/edu/mapper/xml/*.xml
 
 #mybatis-plus:
 #  configuration:
@@ -23,4 +26,8 @@ spring:
 #
 #logging:
 #  level:
+
+
+
+
 #    root: WARN # 设置日志级别
