@@ -9,10 +9,9 @@ import com.nfgj.edu.pojo.chapter.VideoVo;
 import com.nfgj.edu.service.ChapterService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nfgj.edu.service.VideoService;
-import com.nfgj.servicebase.exceptionhandler.GuliException;
+import com.nfgj.servicebase.handler.exceptionhandler.GuliException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

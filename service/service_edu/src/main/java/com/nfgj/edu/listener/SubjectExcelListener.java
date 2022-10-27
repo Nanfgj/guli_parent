@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.nfgj.edu.pojo.Subject;
 import com.nfgj.edu.pojo.excel.SubjectData;
 import com.nfgj.edu.service.SubjectService;
-import com.nfgj.servicebase.exceptionhandler.GuliException;
+import com.nfgj.servicebase.handler.exceptionhandler.GuliException;
 
 /**
  * 读取excel的监听器

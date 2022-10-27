@@ -1,7 +1,10 @@
 package com.nfgj.edu.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.nfgj.edu.pojo.Teacher;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TeacherService extends IService<Teacher> {
 
+    //1.分页查询讲师的方法
+    Map<String, Object> getTeacherFrontList(Page<Teacher> teacherPage);
 }

@@ -11,7 +11,7 @@ import java.util.Map;
  * @create 2022-09-19 20:50
  */
 @Data
-public class R {
+public class    R {
     @ApiModelProperty(value = "是否成功")
     private Boolean success;
     @ApiModelProperty(value = "返回码")

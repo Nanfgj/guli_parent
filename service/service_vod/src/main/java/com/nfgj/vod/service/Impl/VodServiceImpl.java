@@ -4,12 +4,18 @@ package com.nfgj.vod.service.Impl;
 import com.aliyun.vod.upload.impl.UploadVideoImpl;
 import com.aliyun.vod.upload.req.UploadStreamRequest;
 import com.aliyun.vod.upload.resp.UploadStreamResponse;
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.vod.model.v20170321.DeleteVideoRequest;
+import com.nfgj.servicebase.handler.exceptionhandler.GuliException;
 import com.nfgj.vod.Utils.ConstantVodUtils;
+import com.nfgj.vod.Utils.InitVodCilent;
 import com.nfgj.vod.service.VodService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * @author nanfgj
@@ -46,5 +52,48 @@ public class VodServiceImpl implements VodService {
             return null;
         }
 
+    }
+
+    //根据视频id删除阿里云视频
+    @Override
+    public void removeAlyVideo(String id) {
+
+        try {
+            //初始化对象
+            DefaultAcsClient client = InitVodCilent.initVodClient(ConstantVodUtils.ACCESS_KEY_ID,ConstantVodUtils.ACCESS_KEY_SECRET);
+            //创建删除视频request对象
+            DeleteVideoRequest request = new DeleteVideoRequest();
+            //想request设置视频id
+            request.setVideoIds(id);
+            //调用初始化对象的方法实现删除
+            client.getAcsResponse(request);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new GuliException(20001,"删除视频失败~");
+        }
+    }
+
+    //删除课程时删除该课程的所有视频
+    @Override
+    public void removeMoreAlyVideo(List<String> videoList) {
+
+        try {
+            //初始化对象
+            DefaultAcsClient client = InitVodCilent.initVodClient(ConstantVodUtils.ACCESS_KEY_ID,ConstantVodUtils.ACCESS_KEY_SECRET);
+            //创建删除视频request对象
+            DeleteVideoRequest request = new DeleteVideoRequest();
+
+            //将videoList中的数据取出 转换为 1,2,3
+            String videoIds = StringUtils.join(videoList.toArray(),",");
+
+
+            //想request设置视频id
+            request.setVideoIds(videoIds);
+            //调用初始化对象的方法实现删除
+            client.getAcsResponse(request);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new GuliException(20001,"删除视频失败~");
+        }
     }
 }

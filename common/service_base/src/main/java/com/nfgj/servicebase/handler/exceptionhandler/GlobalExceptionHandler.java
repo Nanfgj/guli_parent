@@ -1,4 +1,4 @@
-package com.nfgj.servicebase.exceptionhandler;
+package com.nfgj.servicebase.handler.exceptionhandler;
 
 
 import com.nfgj.commonutils.R;

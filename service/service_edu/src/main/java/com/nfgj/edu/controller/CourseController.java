@@ -76,7 +76,7 @@ public class CourseController {
         return R.ok();
     }
 
-    //删除课程
+    //删除课程 同时删除该课程的视频
     @DeleteMapping("{courseId}")
     public R deleteCourse(@PathVariable String courseId){
         courseService.removeCourse(courseId);

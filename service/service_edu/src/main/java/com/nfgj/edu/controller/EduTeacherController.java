@@ -7,7 +7,6 @@ import com.nfgj.commonutils.R;
 import com.nfgj.edu.pojo.Teacher;
 import com.nfgj.edu.pojo.vo.TeacherQuery;
 import com.nfgj.edu.service.TeacherService;
-import com.nfgj.servicebase.exceptionhandler.GuliException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

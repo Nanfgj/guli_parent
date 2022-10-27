@@ -1,6 +1,5 @@
 package com.nfgj.edu.service.impl;
 
-import com.nfgj.commonutils.R;
 import com.nfgj.edu.pojo.Course;
 import com.nfgj.edu.mapper.CourseMapper;
 import com.nfgj.edu.pojo.CourseDescription;
@@ -11,14 +10,10 @@ import com.nfgj.edu.service.CourseDescriptionService;
 import com.nfgj.edu.service.CourseService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nfgj.edu.service.VideoService;
-import com.nfgj.servicebase.exceptionhandler.GuliException;
+import com.nfgj.servicebase.handler.exceptionhandler.GuliException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.List;
 
 /**
  * <p>
@@ -114,7 +109,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
     //删除课程
     @Override
     public void removeCourse(String courseId) {
-        //根据课程id删除小节
+        //根据课程id删除小节和视频
         videoService.removeVideoByCourseId(courseId);
 
         //根据课程id删除章节
