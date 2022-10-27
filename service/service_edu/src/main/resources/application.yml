@@ -23,7 +23,7 @@ spring:
         server-addr: 127.0.0.1:8848  # Nacos地址
 
   redis:              # redis设置
-    host: 42.192.144.210
+    host: 11111111111111
     port: 6379
     password: 111225
     database: 0
